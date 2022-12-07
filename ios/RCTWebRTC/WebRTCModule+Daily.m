@@ -152,8 +152,8 @@ RCT_EXPORT_METHOD(setDailyAudioMode:(NSString *)audioMode) {
   // Ducking other apps' audio implicitly enables allowing mixing audio with
   // other apps, which allows this app to stay alive in the backgrounnd during
   // a call (assuming it has the voip background mode set).
-  AVAudioSessionCategoryOptions categoryOptions = (AVAudioSessionCategoryOptionAllowBluetooth |
-                                                   AVAudioSessionCategoryOptionDuckOthers);
+  AVAudioSessionCategoryOptions categoryOptions = (AVAudioSessionCategoryOptionMixWithOthers |
+                                                   AVAudioSessionCategoryOptionAllowBluetooth);
   if ([audioMode isEqualToString:AUDIO_MODE_VIDEO_CALL]) {
     categoryOptions |= AVAudioSessionCategoryOptionDefaultToSpeaker;
   }
